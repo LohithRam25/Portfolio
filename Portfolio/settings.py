@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-ALLOWED_ORIGINS=["portfolio-production-864d.up.railway.app"]
+ALLOWED_ORIGINS=["https://portfolio-production-864d.up.railway.app"]
 
 # Application definition
 
