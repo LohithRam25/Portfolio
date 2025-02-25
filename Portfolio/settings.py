@@ -59,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Portfolio.urls'
-
+CSRF_TRUSTED_ORIGINS=["https://portfolio-production-5ebd.up.railway.app/*"]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
