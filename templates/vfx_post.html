@@ -74,6 +74,8 @@
     <!-- Posts Section -->
     <div class="container my-5">
         <h1 class="text-center mb-5">My Posts</h1>
+        {% if videos %}
+
         {% for video in videos %}
         <div class="row post-container">
             <!-- Post Image -->
@@ -90,7 +92,7 @@
             <!-- Post Details -->
             <div class="col-md-8 post-details">
                 <h2 class="post-title">{{ video.name }}</h2>
-                <p class="post-description">{{ video.details }}</p>
+                <p class="post-description">{{ video.description }}</p>
                 <p class="post-date">Posted on: {{ video.date }}</p>
             </div>
         </div>
@@ -113,6 +115,9 @@
             </div>
         </div>
         {% endfor %}
+        {% else %}
+                <h2 class="post-description">Not Posted Anythin Yet....</h2>
+{% endif %}
     </div>
 
     <!-- Footer -->

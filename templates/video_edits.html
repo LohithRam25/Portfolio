@@ -74,9 +74,7 @@
     <!-- Posts Section -->
     <div class="container my-5">
         <h1 class="text-center mb-5">My Posts</h1>
-        {%if videos1 is none %}
-        <p>There are no posts</p>
-        {% else %}
+        {% if videos1 %}
         {% for video in videos1 %}
         <div class="row post-container">
             <!-- Post Image -->
@@ -111,7 +109,11 @@
             </div>
         </div>
         {% endfor %}
-                 {%endif %}
+        {% else %}
+        <h2 class="post-description">Not Posted Anythin Yet....</h2>
+
+
+        {% endif %}
 
     </div>
     <!-- Footer -->
