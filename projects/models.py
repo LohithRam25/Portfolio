@@ -8,3 +8,4 @@ class Project(models.Model):
     description=models.CharField(max_length=500)
     started_date=models.DateField()
     conclusion_date=models.DateField()
+    status=models.BooleanField()

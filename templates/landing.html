@@ -101,6 +101,11 @@
             font-size: 0.9rem;
             color: #666;
         }
+
+        /* Dropdown hover styles */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -119,8 +124,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#work">Work</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#contact" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Contact
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="mailto:rampalla2005@gmail.com">rampalla2005@gmail.com</a></li>
+                            <li><a class="dropdown-item" href="tel:+123456789">Instagram Handle:ram_online_567</a></li>
+                            <li><a class="dropdown-item" href="https://www.linkedin.com/in/lohithram" target="_blank">LinkedIn</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -135,7 +147,6 @@
             <p>
                 Welcome to my portfolio! I’m a passionate 3D artist, video editor, and VFX enthusiast with a love for creating stunning visuals.
                 Explore my work below and feel free to reach out for collaborations or inquiries.
-
             </p>
         </div>
     </div>
