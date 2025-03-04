@@ -1,265 +1,81 @@
 {% load static %}
-<!DOCTYPE html>
+
+
 <html lang="en">
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inknut Antiqua", serif;
-  background-color: #f5f5f5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-header {
-  background-color: #5e412f;
-  padding: 12px;
-  color: white;
-  text-align: center;
-  font-size: 18px;
-}
-
-.nav-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 25px;
-}
-
-.nav-bar nav ul {
-  list-style: none;
-  display: flex;
-}
-
-.nav-bar nav ul li {
-  margin-left: 25px;
-}
-
-.nav-bar nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  /* Remove any height constraint */
-}
-
-.intro {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: #e1d1bf;
-  padding: 20px;
-  /* Remove max-height to let it grow */
-}
-
-.intro-image img {
-  width: 316px;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.intro-text {
-  max-width: 700px;
-  text-align: left;
-}
-
-.intro-text h1 {
-  font-size: 42px;
-  color: #5e412f;
-}
-
-.intro-text h2 {
-  font-size: 30px;
-  color: #5e412f;
-}
-
-.intro-text p {
-  font-size: 18px;
-  color: #5e412f;
-  line-height: 1.5;
-}
-
-.portfolio {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #fff;
-  padding: 20px;
-  flex-wrap: wrap;
-}
-
-.portfolio-item {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.portfolio-item a {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.portfolio-item a:hover img {
-  transform: translateY(-3px);
-  transition: 0.3s ease;
-}
-
-.portfolio-item img {
-  width: 160px;
-  border: none;
-}
-
-.portfolio-item h3 {
-  font-size: 18px;
-  margin-top: 8px;
-}
-
-/* Mobile-first responsive design */
-@media (max-width: 768px) {
-  .intro {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .intro-text h1 {
-    font-size: 32px;
-  }
-
-  .intro-text h2 {
-    font-size: 24px;
-  }
-
-  .intro-text p {
-    font-size: 16px;
-  }
-
-  .portfolio {
-    flex-direction: column;
-  }
-
-  .portfolio-item img {
-    width: 120px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-bar {
-    justify-content: center;
-    padding: 10px 0;
-  }
-
-  .nav-bar nav ul {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .intro {
-    padding: 15px;
-  }
-
-  .intro-text h1 {
-    font-size: 28px;
-  }
-
-  .intro-text h2 {
-    font-size: 20px;
-  }
-
-  .intro-text p {
-    font-size: 14px;
-  }
-
-  .portfolio {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .portfolio-item img {
-    width: 100px;
-  }
-}
-
-
-  </style>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="nav-bar">
-        <div class="logo">Ram</div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        /* Custom styles for dropdown */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-roboto">
+    <header class="bg-[#4a3c2f] text-white p-4 flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Ram</h1>
         <nav>
-          <ul>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
+            <ul class="flex space-x-4">
+                <li class="relative dropdown">
+                    <a class="hover:underline text-lg" href="#">Contact</a>
+                    <div class="dropdown-menu absolute hidden bg-white text-black mt-2 rounded-lg shadow-lg z-50">
+                        <a class="block px-4 py-2 hover:bg-gray-200" href="mailto:example@example.com">Email</a>
+                        <a class="block px-4 py-2 hover:bg-gray-200" href="tel:+1234567890">Phone No</a>
+                    </div>
+                </li>
+                <li><a class="hover:underline text-lg" href="#">About</a></li>
+            </ul>
         </nav>
-      </div>
     </header>
-
-    <main>
-      <section class="intro">
-        <div class="intro-image">
-          <!-- Placeholder image -->
-          <img src="{% static 'profile.png' %}" alt="Profile Picture" />
+    <main class="bg-[#e8dfd6] p-8">
+        <div class="relative">
+            <div class="absolute top-[-50px] right-0 bg-white text-black rounded-lg shadow-lg z-50 hidden dropdown-menu">
+                <a class="block px-4 py-2 hover:bg-gray-200" href="rampalla2005@gmail.com">Email:rampalla2005@gmail.com</a>
+                <a class="block px-4 py-2 hover:bg-gray-200"  >Instagram:ram_online_567</a>
+            </div>
+            <div class="bg-[#d6c4b2] p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center">
+                <div class="relative w-90 h-64 md:w-80 md:h-80 mb-4 md:mb-0 md:mr-8">
+              <img src="{% static 'profile.png' %}" alt="Profile Picture" />
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-4xl font-bold mb-2">HELLO!</h2>
+                    <h3 class="text-xl md:text-3xl font-bold mb-4">I Am Palla Lohith Ram</h3>
+                    <p class="text-lg">Welcome to my portfolio! I'm a passionate 3D artist, video editor, and VFX enthusiast with a love for creating stunning visuals. Explore my work below and feel free to reach out for collaborations or inquiries.</p>
+                </div>
+            </div>
         </div>
-        <div class="intro-text">
-          <h2>HELLO!</h2>
-          <h1>I Am Palla Lohith Ram</h1>
-          <p>
-            Welcome to my portfolio! I’m a passionate 3D artist, video editor,
-            and VFX enthusiast with a love for creating stunning visuals.
-            Explore my work below and feel free to reach out for collaborations
-            or inquiries.
-          </p>
-        </div>
-      </section>
-
-      <section class="portfolio">
-        <div class="portfolio-item">
-          <a href="blender">
-
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="text-center">
             <img src="{% static 'blender.png' %}" alt="Blender 3D Art Works" />
-            <h3>Blender 3D Art Works</h3>
-          </a>
-        </div>
-        <div class="portfolio-item">
-          <a href="video_artwork">
+                <p class="text-xl font-semibold">Blender 3d Art Works</p>
+            </div>
+            <div class="text-center">
             <img src="{% static 'video artworks.png' %}" alt="Video ArtWorks" />
-            <h3>Video ArtWorks</h3>
-          </a>
-        </div>
-        <div class="portfolio-item">
-          <a href="vfx">
-
+                <p class="text-xl font-semibold">Video ArtWorks</p>
+            </div>
+            <div class="text-center">
             <img src="{% static 'vfx works.png' %}" alt="VFX Projects" />
-            <h3>VFX Projects</h3>
-          </a>
-        </div>
-        <div class="portfolio-item">
-          <a href="projects">
+                <p class="text-xl font-semibold">VFX Projects</p>
+            </div>
+            <div class="text-center">
             <img src="{% static 'projects.png' %}" alt="Projects" />
-            <h3>Projects</h3>
-          </a>
+                <p class="text-xl font-semibold">Projects</p>
+            </div>
         </div>
-      </section>
     </main>
-  </body>
+    <script>
+        // JavaScript to handle dropdown menu display
+        document.querySelector('.dropdown').addEventListener('mouseover', function() {
+            document.querySelector('.dropdown-menu').classList.remove('hidden');
+        });
+        document.querySelector('.dropdown').addEventListener('mouseout', function() {
+            document.querySelector('.dropdown-menu').classList.add('hidden');
+        });
+    </script>
+</body>
 </html>
