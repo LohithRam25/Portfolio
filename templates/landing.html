@@ -1,6 +1,4 @@
 {% load static %}
-
-
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -13,6 +11,29 @@
         /* Custom styles for dropdown */
         .dropdown:hover .dropdown-menu {
             display: block;
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 20ch; /* Adjust this value to match the length of the text up to 'm' */
+            }
+        }
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: black;
+            }
+        }
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 0.15em solid black;
+            animation: typing 3.5s steps(16, end), blink-caret 0.75s step-end infinite;
+            animation-fill-mode: forwards;
         }
     </style>
 </head>
@@ -28,7 +49,8 @@
                         <a class="block px-4 py-2 hover:bg-gray-200" href="tel:+1234567890">Phone No</a>
                     </div>
                 </li>
-                <li><a class="hover:underline text-lg" href="#">About</a></li>
+                <li><a class="hover:underline text-lg" href="#about">About</a></li>
+                <li><a class="hover:underline text-lg" href="#projects">Projects</a></li>
             </ul>
         </nav>
     </header>
@@ -37,34 +59,58 @@
             <div class="absolute top-[-50px] right-0 bg-white text-black rounded-lg shadow-lg z-50 hidden dropdown-menu">
                 <a class="block px-4 py-2 hover:bg-gray-200" href="rampalla2005@gmail.com">Email:rampalla2005@gmail.com</a>
                 <a class="block px-4 py-2 hover:bg-gray-200"  >Instagram:ram_online_567</a>
+
             </div>
-            <div class="bg-[#d6c4b2] p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center">
-                <div class="relative w-90 h-64 md:w-80 md:h-80 mb-4 md:mb-0 md:mr-8">
-              <img src="{% static 'profile.png' %}" alt="Profile Picture" />
+            <div class="bg-[#d6c4b2] p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center relative">
+                <div class="relative w-full h-64 md:w-1/3 md:h-1/4 mb-4 md:mb-0 md:mr-8">
+                    <img src="{% static 'profile.png' %}" alt="Profile Picture" class="w-full h-full object-cover rounded-lg shadow-lg"/>
                 </div>
-                <div>
+                <div class="md:ml-8">
                     <h2 class="text-2xl md:text-4xl font-bold mb-2">HELLO!</h2>
-                    <h3 class="text-xl md:text-3xl font-bold mb-4">I Am Palla Lohith Ram</h3>
-                    <p class="text-lg">Welcome to my portfolio! I'm a passionate 3D artist, video editor, and VFX enthusiast with a love for creating stunning visuals. Explore my work below and feel free to reach out for collaborations or inquiries.</p>
+                    <h3 class="text-xl md:text-3xl font-bold mb-4 typing-text">I Am Palla Lohith Ram</h3>
+                    <p class="text-lg">Welcome to my portfolio! A creative Blender artist with a passion for visual storytelling. I specialize in producing high-quality VFX videos, combining artistic vision with technical expertise. Let's connect and explore the possibilities of bringing imagination to life!</p>
                 </div>
             </div>
         </div>
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div id="about" class="mt-8 bg-[#d6c4b2] p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center">
+            <div class="md:w-1/6 mb-4 md:mb-0 md:mr-8">
+                <img src="{% static 'profile.png' %}" alt="Profile Picture" class="w-full h-full object-cover rounded-lg shadow-lg"/>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-4">About Me</h2>
+                <p class="text-lg mb-4">I am a passionate Blender artist with a deep interest in creating stunning VFX videos. My experience spans across both creative and technical domains, as I have also worked on machine learning projects and built web applications using Django. My diverse skill set allows me to seamlessly blend art and technology, whether it's crafting visually compelling content or developing intelligent solutions. I am always eager to explore new challenges, push creative boundaries, and continue honing my expertise in both visual effects and software development.</p>
+                <p class="text-lg"><strong>Email:</strong> rampalla2005@gmail.com</p>
+                <a  href="https://github.com/LohithRam25" ><strong>GitHub:</strong> Click here to Visit the profile</a>
+                <br>
+                <a  href="https://www.linkedin.com/in/lohith-ram-palla-2295b8339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" ><strong>Linked In:</strong> Click here to Visit the Linked In Profile</a>
+                <br>
+                <a  href="https://www.instagram.com/ram_online_567?igsh=bTZ4b2g2a2t2NTd4" ><strong>Instagram</strong> Click here to Visit the Instagram Profile</a>
+            </div>
+        </div>
+        <div id="projects" class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div class="text-center">
-            <img src="{% static 'blender.png' %}" alt="Blender 3D Art Works" />
-                <p class="text-xl font-semibold">Blender 3d Art Works</p>
+                <a href="blender" class="w-full h-full rounded-lg shadow-lg">
+                    <img src="{% static 'blender.png' %}" alt="Blender 3D Art Works" class="w-full h-48 object-cover rounded-lg"/>
+                    <p class="text-xl font-semibold mt-2">Blender 3d Art Works</p>
+                </a>
             </div>
             <div class="text-center">
-            <img src="{% static 'video artworks.png' %}" alt="Video ArtWorks" />
-                <p class="text-xl font-semibold">Video ArtWorks</p>
+                <a href="video_artwork" class="w-full h-full rounded-lg shadow-lg">
+                    <img src="{% static 'video artworks.png' %}" alt="Video ArtWorks" class="w-full h-48 object-cover rounded-lg"/>
+                    <p class="text-xl font-semibold mt-2">Video ArtWorks</p>
+                </a>
             </div>
             <div class="text-center">
-            <img src="{% static 'vfx works.png' %}" alt="VFX Projects" />
-                <p class="text-xl font-semibold">VFX Projects</p>
+                <a href="vfx" class="w-full h-full rounded-lg shadow-lg">
+                    <img src="{% static 'vfx works.png' %}" alt="VFX Projects" class="w-full h-48 object-cover rounded-lg"/>
+                    <p class="text-xl font-semibold mt-2">VFX Projects</p>
+                </a>
             </div>
             <div class="text-center">
-            <img src="{% static 'projects.png' %}" alt="Projects" />
-                <p class="text-xl font-semibold">Projects</p>
+                <a href="projects" class="w-full h-full rounded-lg shadow-lg">
+                    <img src="{% static 'projects.png' %}" alt="Projects" class="w-full h-48 object-cover rounded-lg"/>
+                    <p class="text-xl font-semibold mt-2">Projects</p>
+                </a>
             </div>
         </div>
     </main>
