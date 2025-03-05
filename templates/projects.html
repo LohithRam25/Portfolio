@@ -1,16 +1,14 @@
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Name - Posts</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>Palla Lohith Ram - Posts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
     <style>
       body {
         background-color: #f8f9fa;
@@ -23,11 +21,21 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-bottom: 24px;
         padding: 16px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .post-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       }
       .post-title {
         font-size: 1.8rem;
         font-weight: 700;
         margin-bottom: 0px;
+        color: #007bff;
+        transition: color 0.3s ease;
+      }
+      .post-title:hover {
+        color: #0056b3;
       }
       .post-description {
         font-size: 1.1rem;
@@ -61,85 +69,93 @@
           margin-top: 0;
         }
       }
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      .footer {
+        background-color: #f8f9fa;
+        transition: background-color 0.3s ease;
+      }
+      .footer:hover {
+        background-color: #e9ecef;
+      }
+      .navbar {
+        transition: background-color 0.3s ease;
+      }
+      .navbar:hover {
+        background-color: #e9ecef;
+      }
+      .logo-container {
+        transition: transform 0.3s ease;
+      }
+      .logo-container:hover {
+        transform: rotate(15deg) scale(1.1);
+      }
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">Your Name</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/posts/">Posts</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <header class="bg-[#4a3c2f] text-white p-4 flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Ram</h1>
+                <h1 class="text-3xl font-bold text-center">Projects</h1>
+
+        <nav>
+            <ul class="flex space-x-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="bg-[#e8dfd6] p-8">
 
     <!-- Posts Section -->
     <div class="container my-5">
-      <h1 class="text-center mb-5">My Posts</h1>
-      {% if projects %}
-      {% for project in projects %}
-      <div class="row post-container">
-        <!-- Post Image -->
-        <div class="col-md-4">
-          <div>
-            <!-- Image Placeholder or Image Here -->
-          </div>
+            <h2 class="text-3xl font-bold mb-4 text-center">My Posts</h2>
+        {% if projects %}
+        {% for project in projects %}
+        <div class="post-container bg-white rounded-lg shadow-lg p-6 mb-6 transition-transform transform hover:scale-105">
+            <div class="flex flex-col md:flex-row">
+                <!-- Post Image -->
+                <div class="md:w-1/6 md:mb-0 logo-container">
+                    <img src="{% static 'dev_logo.png' %}" alt="Profile Picture" class="w-30 h-30 rounded-full shadow-lg"/>
+                </div>
+                <!-- Post Details -->
+                <div class="md:w-2/3 md:pl-6">
+                    <h2 class="text-2xl font-bold text-black-600 mb-2">{{ project.title }}</h2>
+                    <a href="{{ project.github }}" target="_blank" class="text-blue-500 hover:underline">Click to View Github Repository</a>
+                    <p class="text-gray-700 mt-4">{{ project.description }}</p>
+                    <div class="mt-4">
+                        <p class="text-gray-600">Languages Used: {{ project.languages }}</p>
+                        <p class="text-gray-600">Started on: {{ project.started_date }}</p>
+                        {% if project.status %}
+                        <p class="text-gray-600">Finished on: {{ project.conclusion_date }}</p>
+                        <p class="text-green-600">Completed</p>
+                        {% else %}
+                        <p class="text-yellow-600">Ongoing</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Post Details -->
-        <div class="col-md-8 post-details">
-          <div class="left-end">
-            <h2 class="post-title">{{ project.title }}</h2>
-            <a href="{{ project.github }}" target="_blank"
-              >Click to View Github Repository</a
-            >
-            <h5 class="post-description">
-              Languages Used: {{ project.languages }}
-            </h5>
-          </div>
-          <div class="right-end">
-            <p class="post-description">{{ project.description }}</p>
-            <p class="post-date">Started on: {{ project.started_date }}</p>
-            {% if project.status %}
-            <p class="post-date">Finished on: {{ project.conclusion_date }}</p>
-            <p class="post-date">Completed</p>
-            {% else %}
-            <p class="post-date">Ongoing</p>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-      {% else %}
-      <h2 class="post-description">Not Posted Anything Yet....</h2>
-      {% endif %}
+        {% endfor %}
+        {% else %}
+        <h2 class="text-center text-gray-700">Not Posted Anything Yet....</h2>
+        {% endif %}
     </div>
 
     <!-- Footer -->
     <div class="footer bg-light py-3">
-      <div class="container text-center">
-        <p class="mb-0">&copy; 2023 Your Name. All rights reserved.</p>
-      </div>
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2023 Your Name. All rights reserved.</p>
+        </div>
     </div>
-
+</main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
