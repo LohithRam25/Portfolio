@@ -8,6 +8,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
         .dropdown:hover .dropdown-menu {
             display: block;
@@ -56,16 +64,16 @@
                 <div class="relative w-full h-64 md:w-1/3 md:h-1/4 mb-4 md:mb-0 md:mr-8">
                     <img src="{% static 'profile.png' %}" alt="Profile Picture" class="w-full h-full object-cover rounded-lg shadow-lg"/>
                 </div>
-                <div class="md:ml-8">
+                <div class="md:ml-8 display-flex text-align">
                     <h2 class="text-2xl md:text-4xl font-bold mb-2">HELLO!</h2>
                     <h3 class="text-xl md:text-3xl font-bold mb-4 typing-text">I Am Palla Lohith Ram</h3>
-                    <p class="text-lg">Welcome to my portfolio! A creative Blender artist with a passion for visual storytelling. I specialize in producing high-quality VFX videos, combining artistic vision with technical expertise. Let's connect and explore the possibilities of bringing imagination to life!</p>
+                    <p class="text-lg text-align">Welcome to my portfolio! A creative Blender artist with a passion for visual storytelling. I specialize in producing high-quality VFX videos, combining artistic vision with technical expertise. Let's connect and explore the possibilities of bringing imagination to life!</p>
                 </div>
             </div>
         </div>
         <div id="about" class="mt-8 bg-[#d6c4b2] p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center card-hover">
 
-            <div class="md:w-1/2">
+            <div class="md:w-1/2 display-flex text-align">
                 <h2 class="text-3xl font-bold mb-4 text-center">About Me</h2>
                 <p class="text-lg mb-4">I am a passionate Blender artist with a deep interest in creating stunning VFX videos. My experience spans across both creative and technical domains, as I have also worked on machine learning projects and built web applications using Django. My diverse skill set allows me to seamlessly blend art and technology, whether it's crafting visually compelling content or developing intelligent solutions. I am always eager to explore new challenges, push creative boundaries, and continue honing my expertise in both visual effects and software development.</p>
                 <p class="text-lg"><strong>Email:</strong> rampalla2005@gmail.com</p>
@@ -174,6 +182,11 @@
                     </a>
                 </div>
             </div>
+              <div class="footer bg-light py-3">
+      <div class="container text-center">
+        <p class="mb-0">&copy;2025 Palla Lohith Ram. All rights reserved.</p>
+      </div>
+    </div>
         </div>
     </main>
     <script>
