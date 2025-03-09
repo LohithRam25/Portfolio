@@ -43,6 +43,17 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             transition: box-shadow 0.3s ease;
         }
+        i{
+            font-size:30px;
+            margin:10px;
+            color: black;
+            text-decoration: none;
+        }
+        .text-center a img{
+            border:3px solid black;
+            box-shadow: 10px 10px 20px #00000080;
+        }
+
     </style>
 </head>
 <body class="font-roboto">
@@ -75,13 +86,11 @@
 
             <div class="md:w-1/2 display-flex text-align">
                 <h2 class="text-3xl font-bold mb-4 text-center">About Me</h2>
-                <p class="text-lg mb-4">I am a passionate Blender artist with a deep interest in creating stunning VFX videos. My experience spans across both creative and technical domains, as I have also worked on machine learning projects and built web applications using Django. My diverse skill set allows me to seamlessly blend art and technology, whether it's crafting visually compelling content or developing intelligent solutions. I am always eager to explore new challenges, push creative boundaries, and continue honing my expertise in both visual effects and software development.</p>
-                <p class="text-lg"><strong>Email:</strong> rampalla2005@gmail.com</p>
-                <a href="https://github.com/LohithRam25"><strong>GitHub:</strong> Click here to Visit the profile</a>
-                <br>
-                <a href="https://www.linkedin.com/in/lohith-ram-palla-2295b8339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><strong>Linked In:</strong> Click here to Visit the Linked In Profile</a>
-                <br>
-                <a href="https://www.instagram.com/ram_online_567?igsh=bTZ4b2g2a2t2NTd4"><strong>Instagram</strong> Click here to Visit the Instagram Profile</a>
+                <p class="text-lg text-align">I am a passionate Blender artist with a deep interest in creating stunning VFX videos. My experience spans across both creative and technical domains, as I have also worked on machine learning projects and built web applications using Django. My diverse skill set allows me to seamlessly blend art and technology, whether it's crafting visually compelling content or developing intelligent solutions. I am always eager to explore new challenges, push creative boundaries, and continue honing my expertise in both visual effects and software development.</p>
+               <a href="mailto:rampalla2005@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://github.com/LohithRam25" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://www.linkedin.com/in/lohith-ram-palla-2295b8339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://www.instagram.com/ram_online_567?igsh=bTZ4b2g2a2t2NTd4" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
   <div id="skills" class="mt-8 bg-[#d6c4b2] p-8 rounded-lg shadow-lg card-hover">
@@ -157,27 +166,27 @@
         <div id="projects" class="mt-8 bg-[#d6c4b2] p-8 rounded-lg shadow-lg">
             <h2 class="text-3xl font-bold mb-4">Explore My Work Here</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="text-center hover-effect">
+                <div class="text-center hover-effect border:10px solid white">
                     <a href="blender" class="w-full h-full rounded-lg shadow-lg">
-                        <img src="{% static 'blender.png' %}" alt="Blender 3D Art Works" class="w-full h-48 object-cover rounded-lg"/>
+                        <img src="{% static 'blender_logo.jpg' %}" alt="Blender 3D Art Works" class="w-full h-48 object-cover rounded-lg"/>
                         <p class="text-xl font-semibold mt-2">Blender 3d Art Works</p>
                     </a>
                 </div>
                 <div class="text-center hover-effect">
                     <a href="video_artwork" class="w-full h-full rounded-lg shadow-lg">
-                        <img src="{% static 'video artworks.png' %}" alt="Video ArtWorks" class="w-full h-48 object-cover rounded-lg"/>
+                        <img src="{% static 'video artworks.jpg' %}" alt="Video ArtWorks" class="w-full h-48 object-cover rounded-lg"/>
                         <p class="text-xl font-semibold mt-2">Video ArtWorks</p>
                     </a>
                 </div>
                 <div class="text-center hover-effect">
                     <a href="vfx" class="w-full h-full rounded-lg shadow-lg">
-                        <img src="{% static 'vfx works.png' %}" alt="VFX Projects" class="w-full h-48 object-cover rounded-lg"/>
+                        <img src="{% static 'vfx works.jpg' %}" alt="VFX Projects" class="w-full h-48 object-cover rounded-lg"/>
                         <p class="text-xl font-semibold mt-2">VFX Projects</p>
                     </a>
                 </div>
                 <div class="text-center hover-effect">
                     <a href="projects" class="w-full h-full rounded-lg shadow-lg">
-                        <img src="{% static 'projects.png' %}" alt="Projects" class="w-full h-48 object-cover rounded-lg"/>
+                        <img src="{% static 'projects.jpg' %}" alt="Projects" class="w-full h-48 object-cover rounded-lg"/>
                         <p class="text-xl font-semibold mt-2">Projects</p>
                     </a>
                 </div>
