@@ -74,6 +74,22 @@
         .navbar-nav .nav-item {
             color: white;
         }
+        
+    .box-3d {
+        position: relative;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+        border: 2px solid #3a3026; /* Slightly darker border for depth */
+    }
+
+    .box-3d:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+    }
+
+
     </style>
 </head>
 
@@ -129,7 +145,7 @@
 <a href="https://www.instagram.com/ram_online_567?igsh=bTZ4b2g2a2t2NTd4" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-  <div id="skills" class="mt-8 bg-[#d6c4b2] p-8 rounded-lg shadow-lg card-hover">
+<div id="skills" class="mt-8 bg-[#d6c4b2] p-8 rounded-lg shadow-lg card-hover">
     <h2 class="text-3xl font-bold mb-6">Skills</h2>
     <p class="text-lg mb-6">Here's a list of skills I am proficient in, divided into various categories.</p>
 
@@ -137,51 +153,43 @@
         <!-- Languages Section -->
         <div>
             <h3 class="text-2xl font-semibold mb-4">Languages</h3>
-            <div class="flex flex-wrap gap-4">
-                <span class="bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">C</span>
-                <span class="bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Python</span>
-                <span class="bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Java</span>
-
+            <div class="flex flex-wrap gap-6">
+                <div class="box-3d bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">C</div>
+                <div class="box-3d bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Python</div>
+                <div class="box-3d bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Java</div>
             </div>
         </div>
 
         <!-- Frameworks & Libraries Section -->
         <div>
             <h3 class="text-2xl font-semibold mb-4">Frameworks & Libraries</h3>
-            <div class="flex flex-wrap gap-4">
-                <span class="bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Django</span>
-                                <span class="bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Flask</span>
-
-
+            <div class="flex flex-wrap gap-6">
+                <div class="box-3d bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Django</div>
+                <div class="box-3d bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Flask</div>
             </div>
         </div>
 
-        <!-- Tools Section -->
+        <!-- Creative Tools Section -->
         <div>
             <h3 class="text-2xl font-semibold mb-4">Creative Skills</h3>
-            <div class="flex flex-wrap gap-4">
-                  <span class="bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Figma</span>
-                <span class="bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Blender</span>
-                <span class="bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Davinci Resolve</span>
-                <!-- Add your tools here -->
+            <div class="flex flex-wrap gap-6">
+                <div class="box-3d bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Figma</div>
+                <div class="box-3d bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Blender</div>
+                <div class="box-3d bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Davinci Resolve</div>
             </div>
         </div>
 
         <!-- Databases Section -->
         <div>
             <h3 class="text-2xl font-semibold mb-4">Databases</h3>
-            <div class="flex flex-wrap gap-4">
-                <!-- Add your databases here -->
-
-                                  <span class="bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">MySql</span>
-                                  <span class="bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Postgresql</span>
-
-
-
+            <div class="flex flex-wrap gap-6">
+                <div class="box-3d bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">MySql</div>
+                <div class="box-3d bg-[#4a3c2f] text-white px-4 py-2 rounded-lg">Postgresql</div>
             </div>
         </div>
     </div>
 </div>
+
     <div id="education" class="mt-8 bg-[#d6c4b2] p-8 rounded-lg shadow-lg card-hover">
     <h2 class="text-3xl font-bold mb-4">Education</h2>
     <div class="space-y-6">
