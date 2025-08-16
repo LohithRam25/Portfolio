@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-ALLOWED_ORIGINS=["https://portfolio-production-864d.up.railway.app"]
+ALLOWED_ORIGINS=["https://portfolio-production-864d.up.railway.app","https://portfolio-n1mo.onrender.com"]
 
 # Application definition
 
@@ -59,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Portfolio.urls'
-CSRF_TRUSTED_ORIGINS=["https://portfolio-production-5ebd.up.railway.app/*"]
+CSRF_TRUSTED_ORIGINS=["https://portfolio-production-5ebd.up.railway.app/*","https://portfolio-n1mo.onrender.com/*"]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
